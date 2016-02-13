@@ -1,7 +1,7 @@
 <?php
 $user = 'root';
 $pass = 'root';
-$name = 'Shop';
+$name = 'cartdb';
 $dbh = null;
 try {
     $dbh = new PDO('mysql:host=localhost;dbname='.$name, $user, $pass);

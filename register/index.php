@@ -34,25 +34,35 @@ function generateToken() {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Register</title>
-</head>
+    <title>Instruments Online</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script></head>
 <body>
-<div>
-    <a href="/SimpleCart">Home</a>
-    <a href="/SimpleCart/login">Login</a>
-    <a href="/SimpleCart/register">Register</a>
-    <a href="/SimpleCart/cart">Cart</a>
-</div><br><br>
+<ul class="nav nav-tabs">
+    <li role="presentation" class=""><a href="/SimpleCart">Home</a></li>
+    <li role="presentation"><a href="/SimpleCart/login">Login</a></li>
+    <li role="presentation"><a href="/SimpleCart/register">Register</a></li>
+    <li role="presentation"><a href="/SimpleCart/cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
+    <h1>Instruments Online</h1>
+</ul>
+<br><br>
+
+<div id="content">
 <?php
     if(isset($_POST['register'])) {
         register($dbh);
     }
 ?>
+
+
 <form method="post" action="">
     <input type="text" name="username" placeholder="Username"/>
     <input type="password" name="password" placeholder="Password"/>
     <input type="text" name="email" placeholder="Email"/>
     <input type="submit" name="register" value="REGISTER"/>
 </form>
+</div>
 </body>
 </html>
