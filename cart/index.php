@@ -31,7 +31,7 @@ function getProducts($conn) {
                     Price: $'.$row['price'].'<br>
                     <form method="post" action="/SimpleCart/cart/">
                         <input type="hidden" name="id" value="'.$row['id'].'"/>
-                        <input type="submit" name="delete" value="DELETE"/>
+                        <input type="submit" name="delete" value="DELETE" style="background-color: red;"/>
                     </form>
                     </div>';
             }
@@ -78,12 +78,14 @@ if(isset($_POST['delete'])) {
 </ul>
 <br><br>
 <div id="content">
-    <?php
+    <button> <a href="/SimpleCart"> <span class="glyphicon glyphicon-home" aria-hidden="true" style="color:blue;"></span></a>
+        </button>
+        <?php
         getProducts($dbh);
     ?>
     <br>
     <form method="post" action="/SimpleCart/checkout/">
-        <input type="submit" name="checkout" value="CHECKOUT"/>
+        <input type="submit" name="checkout" value="CHECKOUT" style="color: black;"/>
     </form>
 </div>
 
